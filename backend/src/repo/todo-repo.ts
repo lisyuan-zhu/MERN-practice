@@ -17,17 +17,23 @@ class TodoRepoImpl implements TodoRepo {
 
     async getTodos(): Promise<Array<ITodo>> {
         // TODO: Should get Todo from mongoDB
+        return Todo.find()
+        
     }
 
+    async addTodo(todoBody: ITodo): Promise<ITodo> {
     // TODO: Should add Todo into mongoDB
-
+        return Todo.create(todoBody)
+    }
 
     async updateTodo(id: string, todoBody: ITodo): Promise<ITodo | null> {
         // TODO: Should update Todo to mongoDB
+        return Todo.findByIdAndUpdate(id, todoBody, {new: true})
     }
 
     async deleteTodo(id: string): Promise<ITodo | null> {
         // TODO: Should delete Todo from mongoDB
+        return Todo.findByIdAndUpdate(id)
     }
 
 }
