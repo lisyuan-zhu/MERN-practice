@@ -47,7 +47,7 @@ const TodoRouter = (server: FastifyInstance, opts: RouteShorthandOptions, done: 
                 return reply.status(404).send({msg: `Not found Todo: ${id}`})
             }
         } catch (error) {
-            console.error(`PUT /todos/${request.params.id} error: $error`)
+            console.error(`PUT /todos/${request.params.id} error: ${error}`)
             return reply.status(500).send(`server PUT error: ${error}`)
         }
     })
@@ -62,7 +62,7 @@ const TodoRouter = (server: FastifyInstance, opts: RouteShorthandOptions, done: 
                 return reply.status(404).send({msg: `Not found Todo: ${id}`})
             }
         } catch (error) {
-            console.error(`DELETE /todos/${request.params.id} error: $error`)
+            console.error(`DELETE /todos/${request.params.id} error: ${error}`)
             return reply.status(500).send(`server DELETE error: ${error}`)
         }
     })
