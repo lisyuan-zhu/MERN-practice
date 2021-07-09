@@ -44,7 +44,7 @@ const TodoRouter = (server: FastifyInstance, opts: RouteShorthandOptions, done: 
             if(todo) {
                 return reply.status(200).send({todo})
             } else {
-                return reply.status(404).send({msg: `Not found TodoL ${id}`})
+                return reply.status(404).send({msg: `Not found Todo: ${id}`})
             }
         } catch (error) {
             console.error(`PUT /todos/${request.params.id} error: $error`)

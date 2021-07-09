@@ -55,7 +55,7 @@ describe('Form test', () => {
         expect(res.todo.status).toBe(false)
 
         const getResponse = await server.inject({method: 'GET', url: '/api/todos'})
-        expect(response.statusCode).toBe(200)
+        expect(getResponse.statusCode).toBe(200)
         const res2: {todos: Array<ITodo>} = JSON.parse(getResponse.body)
         expect(res2.todos.length).toBe(1)
         expect(res2.todos[0].name).toBe('eat dinner')
