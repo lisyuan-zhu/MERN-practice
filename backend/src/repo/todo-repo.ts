@@ -28,12 +28,12 @@ class TodoRepoImpl implements TodoRepo {
 
     async updateTodo(id: string, todoBody: ITodo): Promise<ITodo | null> {
         // TODO: Should update Todo to mongoDB
-        return Todo.findByIdAndUpdate(id, todoBody, {new: true})
+        return Todo.findByIdAndUpdate(id, todoBody)
     }
 
     async deleteTodo(id: string): Promise<ITodo | null> {
         // TODO: Should delete Todo from mongoDB
-        return Todo.findByIdAndUpdate(id)
+        return Todo.findByIdAndDelete(id)
     }
 
 }
